@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.juliocalderon.myapplication.MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/community_icon"
+        android:layout_marginTop="32dp"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id='@+id/loginFacebook'
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:drawableBottom="@drawable/signinfacebook"
+        android:drawableLeft="@color/colorPrimary"
+        android:textColor="@color/com_facebook_button_background_color_focused"
+        android:autoText="false"
+        android:textAllCaps="false"
+        android:textSize="@dimen/cardview_compat_inset_shadow"
+        android:scrollHorizontally="false"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/googleBtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/signingoogle"
+        android:layout_marginTop="85dp"
+        android:id="@+id/googleBtn"
+        android:background="@color/colorPrimary"
+        android:adjustViewBounds="false"
+        android:onClick="signInGoogle"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
