@@ -6,6 +6,8 @@ import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -24,11 +26,12 @@ public class MessageDataSource {
 
 
     public static void saveMessage(Message message, String convoId){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         Date date = message.getDate();
         String key = sDateFormat.format(date);
         HashMap<String, String> msg = new HashMap<>();
         msg.put(COLUMN_TEXT, message.getText());
-        msg.put(COLUMN_SENDER,"UsuarioQueEnvia");
+        msg.put(COLUMN_SENDER, user.getDisplayName());
         sRef.child(convoId).child(key).setValue(msg);
     }
 

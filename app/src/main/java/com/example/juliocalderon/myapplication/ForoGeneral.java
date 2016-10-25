@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import com.firebase.client.Firebase;
 import com.firebase.client.core.Context;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,7 +26,6 @@ public class ForoGeneral extends AppCompatActivity implements View.OnClickListen
         MessageDataSource.MessagesCallbacks {
 
     public static final String USER_EXTRA = "USER";
-
     public static final String TAG = "ChatActivity";
     private ArrayList<Message> mMessages;
     private MessagesAdapter mAdapter;
@@ -33,6 +34,7 @@ public class ForoGeneral extends AppCompatActivity implements View.OnClickListen
     private Date mLastMessageDate = new Date();
     private String mConvoId;
     private MessageDataSource.MessagesListener mListener;
+    private  String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,10 @@ public class ForoGeneral extends AppCompatActivity implements View.OnClickListen
         mMessages = new ArrayList<>();
         mAdapter = new MessagesAdapter(mMessages);
         mListView.setAdapter(mAdapter);
-
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user!=null){
+           name = user.getDisplayName();
+        }
         setTitle(mRecipient);
         if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -102,7 +107,8 @@ public class ForoGeneral extends AppCompatActivity implements View.OnClickListen
             LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams)nameView.getLayoutParams();
 
             int sdk = Build.VERSION.SDK_INT;
-            if (message.getSender().equals("UsuarioQueEnvia")){
+
+            if (message.getSender().equals(name)){
                 if (sdk >= Build.VERSION_CODES.JELLY_BEAN) {
                     nameView.setBackground(getDrawable(R.drawable.bubble_right_green));
                 } else{

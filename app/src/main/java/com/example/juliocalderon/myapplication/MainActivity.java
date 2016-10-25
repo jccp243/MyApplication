@@ -79,8 +79,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 handleFacebookAccessToken(loginResult.getAccessToken());
-                Intent i = new Intent(context, Main2Activity.class);
-                startActivity(i);
             }
 
             @Override
