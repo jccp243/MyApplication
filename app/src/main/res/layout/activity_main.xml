@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorForo"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,22 +22,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <com.facebook.login.widget.LoginButton
-        android:id='@+id/loginFacebook'
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:drawableBottom="@drawable/signinfacebook"
-        android:drawableLeft="@color/colorPrimary"
-        android:textColor="@color/com_facebook_button_background_color_focused"
-        android:autoText="false"
-        android:textAllCaps="false"
-        android:textSize="@dimen/cardview_compat_inset_shadow"
-        android:scrollHorizontally="false"
-        android:layout_marginTop="37dp"
-        android:layout_below="@+id/googleBtn"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,5 +33,18 @@
         android:onClick="signInGoogle"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id='@+id/loginFacebook'
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/com_facebook_button_background_color_focused"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/googleBtn"
+        android:layout_alignLeft="@+id/googleBtn"
+        android:layout_alignStart="@+id/googleBtn"
+        android:layout_alignRight="@+id/googleBtn"
+        android:layout_alignEnd="@+id/googleBtn"
+        android:textSize="20sp" />
 
 </RelativeLayout>

@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
     private LoginButton loginFacebook;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -164,6 +166,9 @@ public class MainActivity extends AppCompatActivity {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
+                Intent i = new Intent(context, Main2Activity.class);
+                startActivity(i);
+
             } else {
                 // Google Sign In failed, update UI appropriately
                 // ...

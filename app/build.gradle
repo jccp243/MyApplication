@@ -1,11 +1,17 @@
 apply plugin: 'com.android.application'
 
 android {
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
+    }
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
     defaultConfig {
         applicationId "com.example.juliocalderon.myapplication"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
@@ -30,6 +36,7 @@ dependencies {
     compile 'com.google.android.gms:play-services-auth:9.6.1'
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
     compile 'com.google.firebase:firebase-database:9.6.1'
+    compile 'com.firebase:firebase-client-android:2.4.1+'
     testCompile 'junit:junit:4.12'
 }
 

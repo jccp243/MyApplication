@@ -28,4 +28,8 @@ public class Main2Activity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void irForoGeneral(View view) {
+        Intent i =new Intent(this, ForoGeneral.class);
+        startActivity(i);
+    }
 }
