@@ -20,7 +20,7 @@ public class Message {
     }
 
     public String getText() {
-        return mText;
+        return mSender+" "+mText;
     }
 
     public void setText(String text) {

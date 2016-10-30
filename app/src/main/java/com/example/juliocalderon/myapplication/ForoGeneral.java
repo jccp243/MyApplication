@@ -74,7 +74,7 @@ public class ForoGeneral extends AppCompatActivity implements View.OnClickListen
         Message msg = new Message();
         msg.setDate(new Date());
         msg.setText(newMessage);
-        msg.setSender("Ashok");
+        msg.setSender("");
 
         MessageDataSource.saveMessage(msg, mConvoId);
     }
