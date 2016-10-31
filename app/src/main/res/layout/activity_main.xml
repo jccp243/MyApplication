@@ -22,15 +22,11 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_gmail"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/signingoogle"
-        android:layout_marginTop="85dp"
-        android:id="@+id/googleBtn"
-        android:background="@color/colorPrimary"
-        android:adjustViewBounds="false"
-        android:onClick="signInGoogle"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="53dp"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true" />
 
@@ -39,12 +35,12 @@
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:textColor="@color/com_facebook_button_background_color_focused"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/googleBtn"
-        android:layout_alignLeft="@+id/googleBtn"
-        android:layout_alignStart="@+id/googleBtn"
-        android:layout_alignRight="@+id/googleBtn"
-        android:layout_alignEnd="@+id/googleBtn"
-        android:textSize="20sp" />
+        android:layout_marginTop="26dp"
+        android:textSize="20sp"
+        android:layout_below="@+id/sign_in_gmail"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp" />
 
 </RelativeLayout>
